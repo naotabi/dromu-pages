@@ -1,0 +1,200 @@
+:root {
+  --bg: #faf7f3;
+  --card: #ffffff;
+  --text: #24211d;
+  --text-dim: #6b645a;
+  --accent: #b5714a;
+  --accent-soft: #e6b7a1;
+  --line: #e7e0d7;
+  --sage: #6d8577;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #15130f;
+    --card: #1e1b16;
+    --text: #f1ece3;
+    --text-dim: #a89f92;
+    --accent: #e6b7a1;
+    --accent-soft: #c98a67;
+    --line: #332e26;
+    --sage: #8ca699;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, "Hiragino Sans", "Hiragino Kaku Gothic ProN",
+    "Yu Gothic", "Noto Sans JP", "Segoe UI", Roboto, sans-serif;
+  line-height: 1.8;
+}
+
+.wrap {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 48px 24px 96px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.brand-mark {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 38% 36%, var(--accent-soft), var(--accent) 70%);
+  flex-shrink: 0;
+}
+
+.brand-name {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+nav.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.pagelinks {
+  display: flex;
+  gap: 18px;
+  font-size: 14px;
+}
+
+.pagelinks a {
+  color: var(--text-dim);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+.pagelinks a:hover,
+.pagelinks a[aria-current="page"] {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+.lang-toggle {
+  display: inline-flex;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  overflow: hidden;
+  font-size: 13px;
+}
+
+.lang-toggle button {
+  border: none;
+  background: transparent;
+  color: var(--text-dim);
+  padding: 6px 14px;
+  cursor: pointer;
+  font: inherit;
+}
+
+.lang-toggle button.active {
+  background: var(--accent);
+  color: #fff;
+}
+
+h1 {
+  font-size: 26px;
+  margin: 0 0 4px;
+  font-weight: 700;
+}
+
+.updated {
+  color: var(--text-dim);
+  font-size: 13px;
+  margin-bottom: 36px;
+}
+
+h2 {
+  font-size: 17px;
+  margin: 36px 0 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--line);
+}
+
+p { margin: 0 0 14px; }
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 16px;
+}
+
+.faq-q {
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.faq-a {
+  color: var(--text-dim);
+  margin-bottom: 22px;
+}
+
+.faq-a:last-child { margin-bottom: 0; }
+
+footer {
+  margin-top: 64px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  color: var(--text-dim);
+  font-size: 13px;
+}
+
+.hero {
+  text-align: center;
+  padding: 64px 0 32px;
+}
+
+.hero .brand-mark {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 20px;
+}
+
+.hero h1 { font-size: 30px; }
+
+.hero p { color: var(--text-dim); max-width: 440px; margin: 0 auto 32px; }
+
+.cta-row {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.cta-row a {
+  display: inline-block;
+  padding: 12px 22px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  color: var(--text);
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.cta-row a:hover { border-color: var(--accent); color: var(--accent); }
+
+[data-lang="en"] { display: none; }
+html[data-active-lang="en"] [data-lang="ja"] { display: none; }
+html[data-active-lang="en"] [data-lang="en"] { display: revert; }
